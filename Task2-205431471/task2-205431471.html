@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Question1
+        console.log("Question1-Check and Show Number between 0-532 or 928-...");
+        var Number1=(prompt("Choose Your Number:"));//בחירת מספר וקליטה במשתנה
+        if(Number1>928 || Number1<532){//תנאי למספר שהכנסנו
+            console.log("Your Number:",Number1); //הדפסה של המספר רק אם הוא בטווח  
+        }
+        //Question2
+        console.log("Question2");
+        Number1=(prompt("Choose Your Number1:"));//קליטת 3 מספרים
+        var Number2=(prompt("Choose Your Number2:"));
+        var Number3=(prompt("Choose Your Number3:"));
+
+        if(Number1<Number2 && Number2<Number3){//בודק אם 3 המספרים שהכנסנו בסדר עולה 
+            console.log("Increasing");
+            
+        }
+        //Question3
+        console.log("Question3");
+         var Number4=(prompt("Choose Your Number2:"));
+         var Number5=(prompt("Choose Your Number3:"));
+
+        if(Number4<Number5 ){//
+            console.log("Growing");//בודק סדר עולה לאחר קליטת  משתנים
+        }
+        //Question4
+        console.log("Question4 -Even or Odd");
+        var Number6=(prompt("Choose Your Number:"));
+        if(Number6%2==0)//בודק האם המספר זוגי
+            console.log("Even");//אם כן מדפיס שזוגי לא ידפסי אי זוגי
+        else
+            console.log("Odd");
+
+        //Question5
+        console.log("Question5 -Show the Min Number");
+        var Number7=(prompt("Choose Your Number1:"));
+        var Number8=(prompt("Choose Your Number2:"));
+        if(Number7<Number8)//בודק איזה מספר יותר קטן ומציג אותו קודם
+        {
+            console.log(Number7);
+            console.log(Number8);
+        }
+        else(Number8<Number7)
+        {
+            console.log(Number8);
+            console.log(Number7);
+        }
+        //Question6
+        console.log("Question6-Positive or Negative or Zero");
+        var Number9=(prompt("Choose Your Number:"));
+        if(Number9>0)//בודק אם המשתנה חיובי
+            console.log("Positive Number");
+        else if(Number9<0)//בודק אם המשתנה שלילי
+            console.log("Negaive Number");
+        else("The number is '0'")//כל מה שנשאר יהיה שווה ל-0
+
+    </script>
+    
+</body>
+</html>
