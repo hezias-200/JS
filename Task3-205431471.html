@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Question 1-6*/
+        var Number2;
+        var arrNum=[6];
+        var max=0,sum=0;
+        var min=arrNum[0],arrOdd=[],arrEven=[],countOdd=0,countEven=0,secondMax,min2;
+
+        for(var i=0;i<6;i++)
+        {
+        Number2=Number(prompt("Choose Number:"));
+        arrNum[i]=Number2;
+        sum+=arrNum[i];
+        if(arrNum[i]%2!=0)
+        {
+            arrOdd[countOdd]=arrNum[i];
+            countOdd++;
+        }
+
+        else
+        {
+            arrEven[countEven]=arrNum[i];
+            countEven++;
+        }
+
+        if(max<arrNum[i])
+            max=arrNum[i];
+
+        if (arrNum[i]<min)
+            min=arrNum[i];      
+        }
+        min2=min;
+        for(var i=0;i<arrNum.length;i++){
+            if(arrNum[i]>min2 && arrNum[i]<max){
+                secondMax=arrNum[i];
+                min2=arrNum[i];
+            }
+            
+        }
+        console.log(arrNum);
+        console.log("The max Number is:",max);
+        console.log("The min Number is:",min);
+        console.log("The sum of Number is:",sum);
+        console.log(arrOdd);
+        console.log(arrEven);
+        console.log("The second largest element in the array:",secondMax);
+
+        
+
+        /*Question 7*/
+        var Matrix=[
+            [true,true],
+            [true,false],
+            [false,true],
+            [false,false]
+        ];
+        console.table(Matrix);
+        /*Question 8*/
+        for (var row = 0; row < Matrix.length; row++) {
+            for (var col = 0, col2 = 1; col < Matrix[row].length-1; col++, col2++) {
+                console.log(`OR result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] || Matrix[row][col2]}`);
+                console.log(`AND result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] && Matrix[row][col2]}`);
+                console.log(`XOR result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] ^ Matrix[row][col2]}`);
+                
+            }
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
