@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Question 1-6*/
+        var Number2;
+        var arrNum=[6];
+        var max=0,sum=0;
+        var min=arrNum[0],arrOdd=[],arrEven=[],countOdd=0,countEven=0,secondMax,min2;
+
+        for(var i=0;i<6;i++)//קליטה של שישה מספרים מהמשתמש
+        {
+        Number2=Number(prompt("Choose Number:"));
+        arrNum[i]=Number2;
+        sum+=arrNum[i];
+        if(arrNum[i]%2!=0)// בודק האם האיברים אי-זוגיים אם כן שולח למערך נפרד אי זוגי 
+        {
+            arrOdd[countOdd]=arrNum[i];
+            countOdd++;
+        }
+
+        else//אם המספרים זוגיים שולחים למערך אחר של זוגיים
+        {
+            arrEven[countEven]=arrNum[i];
+            countEven++;
+        }
+
+        if(max<arrNum[i])//בודק מה האיבר המקסימלי
+            max=arrNum[i];
+
+        if (arrNum[i]<min)//בודק מה האיבר המינימאלי
+            min=arrNum[i];      
+        }
+        min2=min;
+        for(var i=0;i<arrNum.length;i++){//לולאה הבודקת מה המספר המקסימלי השני
+            if(arrNum[i]>min2 && arrNum[i]<max){
+                secondMax=arrNum[i];
+                min2=arrNum[i];
+            }
+            
+        }
+        console.log(arrNum);//מדפיס את המערך
+        console.log("The max Number is:",max);//מדפיס מספר מקס
+        console.log("The min Number is:",min);//מדפיס מספר מינ
+        console.log("The sum of Number is:",sum);//מדפיס את סכום האיברים במערך
+        console.log(arrOdd);//מדפיס מערך אי זוגי
+        console.log(arrEven);//מדפיס מערך  זוגי
+        console.log("The second largest element in the array:",secondMax);//מדפיס מספר 2 המקסימלי
+
+        
+
+        /*Question 7*/
+        var Matrix=[//מטריצה המכילה ערכים בוליאנים
+            [true,true],
+            [true,false],
+            [false,true],
+            [false,false]
+        ];
+        console.table(Matrix);//הדפסת מטריצה
+        /*Question 8*/
+        for (var row = 0; row < Matrix.length; row++) {//בודק את כל המצבים של המערך OR AND XOR
+            for (var col = 0, col2 = 1; col < Matrix[row].length-1; col++, col2++) {
+                console.log(`OR result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] || Matrix[row][col2]}`);
+                console.log(`AND result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] && Matrix[row][col2]}`);
+                console.log(`XOR result for ${Matrix[row][col]}, ${Matrix[row][col2]} : ${Matrix[row][col] ^ Matrix[row][col2]}`);
+                
+            }
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
