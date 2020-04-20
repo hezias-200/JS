@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+
+        reverse(379);//הפעלת פונקציה על ממספר 
+        console.log(checkPrime(13));//הפעלת פונקציה על ממספר והדפסה
+        console.log(checkPrime(9));//הפעלת פונקציה על ממספר והדפסה
+        typeOfindex("ssss");//הפעלת פונקציה על משתנה
+        typeOfindex(1234);//הפעלת פונקציה על משתנה
+        typeOfindex(true);//הפעלת פונקציה על משתנה
+        typeOfindex([]);//הפעלת פונקציה על משתנה
+        typeOfindex(checkPrime);//הפעלת פונקציה על משתנה
+        num=5;
+        console.log(`num=5 Dollar to Shekel:${Dollar_to_Shekel(num)}`);//מפעיל את הפונקציה על NUM
+        console.log(`num=5 Shekel to Dollar:${ShekeltoDollar(num)}`);//מפעיל את הפונקציה על NUM
+        console.log(`num=5 Euro to Shekel:${EurotoShekel(num)}`);//מפעיל את הפונקציה על NUM
+        console.log(`num=5 Shekel to Euro:${ShekeltoEuro(num)}`);//מפעיל את הפונקציה על NUM
+        
+        
+        function reverse(num){//פונקציה 
+            var num2=0;
+            var num3=0;
+             
+            while(num!=0){
+                num2=num%10;//שומר במשתנה את השארית
+                num3 = num3 * 10 + num2;//משתנה שמכניס לתוכו את המספר הפוך באמצעות פעולה מתמטית של מכפלה בעשר והוספת שארית 
+                num=Math.floor(num/10);//מחלק את המספר בעשר ומוריד כלפי מטה סוג של תנאי עצירה ללולאה
+                
+            }
+            
+            console.log(num3);//הדפסת המספר הפוך
+            
+        }
+        function checkPrime(num){//פונקציה
+            for (let index = 2; index < num; index++) {//לולאה מתחילה ב-2 לבדוק מספר ראשוני 
+                if(num%index==0){  //בדיקה אם המספר מתחלק באינדקס
+                    console.log("Not prime");//הדפסה לא ראשוני
+                    break;//ברגע שספיק מספר אחד שמתחלק הוא כבר לא ראשוני ואפשר לעצור את הלולאה
+                }
+                else
+                 console.log("prime");
+            }   
+        }
+        function typeOfindex(num){//פונקציות המרה
+            console.log((typeof(num)));
+        }
+        function  Dollar_to_Shekel(num){//פונקציות המרה
+            num=num*3.5;
+            return num;
+        }
+        function  ShekeltoDollar(num){//פונקציות המרה
+            num=num/3.5;
+            return num;
+        }
+        function  EurotoShekel(num){//פונקציות המרה
+            num=num/5;
+            return num;
+        }
+        function  ShekeltoEuro(num){//פונקציות המרה
+            num=num*5;
+            return num;
+        }
+    </script>
+    
+</body>
+</html>
