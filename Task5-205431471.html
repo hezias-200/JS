@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sec=Number(prompt("how much seconds:"));//קליטת מספר ממשתמש
+        var counter=Number(prompt("Choose a counter:"));
+        for (var index = 0; index < counter; index++) {//לולאה שמריצה את כמות המספרים הרנדומלים
+            setTimeout(
+                function(){
+                    console.log(Math.floor(Math.random() * 11));//בוחר מספר רנדומלי 0-10
+                },sec//הזמן שהפונקציה תופעל מה שהמשתמש הכניס
+            )  
+        }
+
+        var arrayOfNames=["John","Alice","Paul"];//מערך שמות
+        for (let index = 0; index < arrayOfNames.length; index++) {//ללולאה שרצה על המערך
+        setTimeout(
+                function(){               
+                    var show = arrayOfNames[Math.floor(Math.random() * arrayOfNames.length)];//שם רנודומלי מהמערך
+                    console.log(show)   //מדפיסה את השם
+                },4000//זמן של 4 שנ עד שהפונקציה תפעל
+            )  
+        }
+        function checkSqrt(num){//פונקציה שבודקת שורש
+            alert(`Number in Sqrt:${Math.sqrt(num)}`);
+
+        }
+        function checkPower(num){//פונקציה שבודקת חזקה
+            alert(`Number in Power:${num*num}`);
+        }
+        var moveToSqrt=Number(prompt("Choose Number Change to Squrt:"));
+        checkSqrt(moveToSqrt);//הפעלת פונקציה
+        var moveToPower=Number(prompt("Choose Number Change to Power:"));
+        checkPower(moveToPower);//הפעלת פונקציה
+
+       var song=`Lyrics titanium shout it out 
+        But I can't hear a word you say
+        I'm talking loud not saying much
+        I'm criticized but all your bullets ricochet
+        You shoot me down, but I get up
+        I'm bulletproof nothing to lose
+        Fire away, fire away
+        Ricochet, you take your aim
+        Fire away, fire away
+        You shoot me down but I won't fall, I am titanium
+        You shoot me down but I won't fall
+        I am titanium, I am titanium, I am titanium, I am titanium
+        Cut me down
+        But it's you who has further to fall
+        Ghost town, haunted love
+        Raise your voice, sticks and stones may break my bones
+        I'm talking loud not saying much
+        I'm bulletproof nothing to lose
+        Fire away, fire away
+        Ricochet, you take your aim
+        Fire away, fire away
+        You shoot me down but I won't fall
+        I am titanium
+        You shoot me down but I won't fall
+        I am titanium, I am titanium
+        Stone-hard, machine gun
+        Firing at the ones who run
+        Stone-hard, thus bulletproof glass
+        You shoot me down but I won't fall, I am titanium
+        You shoot me down but I won't fall, I am titanium
+        You shoot me down but I won't fall, I am titanium
+        You shoot me down but I won't fall, I am titanium
+        I am titanium`;
+
+        function songTitle(songy,nameOFsong){//פונקציה מקבלת שיר וכותרת ובודת איפה האינדקס של הכותרת מתחיל פעם ראשונה
+            var n = songy.search((nameOFsong));//חיפוש הסטרינג בשיר
+            console.log(n);
+        
+        }
+        songTitle(song,"titanium");//הפעלת פונקציה על השיר 
+        
+            
+        
+        
+
+                
+            
+
+        
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
