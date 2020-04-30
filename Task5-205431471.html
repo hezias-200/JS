@@ -23,7 +23,7 @@
                 function(){               
                     var show = arrayOfNames[Math.floor(Math.random() * arrayOfNames.length)];//שם רנודומלי מהמערך
                     console.log(show)   //מדפיסה את השם
-                },4000//זמן של 4 שנ עד שהפונקציה תפעל
+                },4000*index//זמן של 4 שנ עד שהפונקציה תפעל
             )  
         }
         function checkSqrt(num){//פונקציה שבודקת שורש
@@ -38,7 +38,7 @@
         var moveToPower=Number(prompt("Choose Number Change to Power:"));
         checkPower(moveToPower);//הפעלת פונקציה
 
-       var song=`Lyrics titanium shout it out 
+       var songLyrics=`Lyrics titanium shout it out 
         But I can't hear a word you say
         I'm talking loud not saying much
         I'm criticized but all your bullets ricochet
@@ -71,13 +71,19 @@
         You shoot me down but I won't fall, I am titanium
         You shoot me down but I won't fall, I am titanium
         I am titanium`;
+        songName="Titanium"
 
-        function songTitle(songy,nameOFsong){//פונקציה מקבלת שיר וכותרת ובודת איפה האינדקס של הכותרת מתחיל פעם ראשונה
+        function serchSongName(songy,nameOFsong){//פונקציה מקבלת שיר וכותרת ובודת איפה האינדקס של הכותרת מתחיל פעם ראשונה
             var n = songy.search((nameOFsong));//חיפוש הסטרינג בשיר
             console.log(n);
         
         }
-        songTitle(song,"titanium");//הפעלת פונקציה על השיר 
+        function FirstApparence(songName){
+            var res = songName.toLowerCase();
+            return res;
+        }
+        songName =FirstApparence(songName);
+        serchSongName(songLyrics,songName);//הפעלת פונקציה על השיר 
         
             
         
