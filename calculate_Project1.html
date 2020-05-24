@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        *{
+            text-align: center;right: 35%;top: 20%;
+        }
+
+        #div2{
+            
+            background-color:skyblue;position: absolute;border-radius: 5px;height: 60%;width: 30%;
+
+        }
+        #button1{
+            width: 60px;height:60px ;margin: 3px 6px;
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    
+        <div id="div2"><br>
+        <button type="button" id="button1" class="rounded-circle" class="btn btn-secondary" value="c" onclick="showNumbers(value)">C</button>
+        <input type="text" style="width: 52%;height:50px;background-color: tomato;border-radius: 5px " id="res" disabled><br>
+        <input type="button" id="button1" class="btn btn-secondary" value="7" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary" value="8" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary" value="9" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="/" onclick="showNumbers(value)"><br>
+        <input type="button" id="button1" class="btn btn-secondary" value="4" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary" value="5" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary"value="6" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="x" onclick="showNumbers(value)"><br>
+        <input type="button" id="button1" class="btn btn-secondary" value="1" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary" value="2" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-secondary" value="3" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="-" onclick="showNumbers(value)"><br>
+        <input type="button" id="button1" class="btn btn-secondary" value="0" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="." onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="=" onclick="showNumbers(value)">
+        <input type="button" id="button1" class="btn btn-primary" value="+" onclick="showNumbers(value)">
+        
+    </div>
+    <script> 
+        var res, num1 = 0,
+            num2 = 0;
+        let operator = 0;
+        let flag = false;
+
+        function showNumbers(num) {
+            x = document.getElementById("res");
+            if (flag == true) {
+                x.value = "";
+                flag = false;
+            }
+            x.value += num;
+            if (operator != 0 && num != '+' && num != '-' && num != '=' && num!='x' && num!='/') { //לוודא שתווים שאינם מספריים לא נכנסים למספרים שלנו לחישוב
+                num2 = Number(x.value);
+                    
+            } 
+            else if (num != '=' && num != '+' && num != '-' && num!='x' && num!='/') { //לוודא שתווים שאינם מספריים לא נכנסים למספרים שלנו לחישוב
+                num1 = Number(x.value);      
+            }
+            switch (num) {
+                case "=":
+                    switch (operator) { // בדיקה איזה אופרטור להפעיל על שני המספרים שלנו
+                        case "+":
+                            res = num1 + num2;
+                            break;
+                        case "-":
+                            res = num1 - num2;
+                            break;
+                        case "x":
+                            res = num1 * num2;
+                            break;
+                        case "/":
+                            res = num1 / num2;
+                            break;
+                    }
+                    x.value = res;
+                    flag = true;
+                    num1 = 0;
+                    num2 = 0;
+                    operator = 0;
+                    break;
+                case "+":
+                    operator = num// לשמור את האופרטור עד לכשיהיה גם שמור לנו המספר השני
+                    x.value = ""; // איפוס האינפוט
+                    
+                    break;
+                case "-":
+                    operator = num; // לשמור את האופרטור עד לכשיהיה גם שמור לנו המספר השני
+                    x.value = ""; // איפוס האינפוט
+                    break;
+                case "c":
+                    x.value = "";
+                    res = 0;
+                    break;
+                case "x":
+                    operator = num;
+                    x.value = "";
+                    break;    
+                case "/":
+                    operator = num;
+                    x.value = "";
+                    break;    
+            }
+        }
+
+    </script>
+</body>
+
+</html>
